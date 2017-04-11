@@ -386,12 +386,13 @@ void pf_kdtree_cluster(pf_kdtree_t *self)
   {
     node = queue[--queue_count];
 
+    node->cluster=0;
     // If this node has already been labelled, skip it
-    if (node->cluster >= 0)
-      continue;
+    //if (node->cluster >= 0)
+    //  continue;
 
     // Assign a label to this cluster
-    node->cluster = cluster_count++;
+    //node->cluster = cluster_count++;
 
     // Recursively label nodes in this cluster
     pf_kdtree_cluster_node(self, node, 0);
